@@ -1,0 +1,17 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+controllers:
+    resource: '../src/Controller/'
+    type:     annotation
+
+logout:
+    path: /logout
+
+home_page:
+    path: /register
+    controller: 'App\Controller\UserController::registerAction'
+
+partie_membre:
+    path: /membre
+    controller: 'App\Controller\MembreController::index'
