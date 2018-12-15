@@ -1,0 +1,34 @@
+{% extends 'base.formulaire.html.twig' %}
+
+{% block body %}
+
+<li class="nav-item">
+    <a class="nav-link" href="{{path('logout')}}">Déconnexion</a>
+</li>
+    <h1>Liste des messages à vérifier</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formulaire in formulaires %}
+            <tr>
+                <td>{{ formulaire.id }}</td>
+                <td>{{ formulaire.name }}</td>
+                <td>{{ formulaire.email }}</td>
+                <td>{{ formulaire.message }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

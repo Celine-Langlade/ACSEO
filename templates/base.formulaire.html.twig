@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>
+            {% block title %}
+                {% if title is defined %}{{title}}{% else %}Title{% endif %} | Nom du site
+            {% endblock %}
+        </title>
+        {% block stylesheets %}
+            {# bootstrap #}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            {# custom #}
+            <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+    <body id="{% block body_id %}{% endblock %}">
+
+        <div class="container bck1 padded">
+            {% block body %}
+            {% endblock %}
+        </div>
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

@@ -1,6 +1,7 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+    path: /
+    controller: 'App\Controller\FormulaireController::new'
+
 controllers:
     resource: '../src/Controller/'
     type:     annotation
@@ -12,6 +13,10 @@ home_page:
     path: /register
     controller: 'App\Controller\UserController::registerAction'
 
-partie_membre:
-    path: /membre
-    controller: 'App\Controller\MembreController::index'
+formulaire_index:
+    path: /liste
+    controller: 'App\Controller\FormulaireController::index'
+
+formulaire_aurevoir:
+    path: /aurevoir
+    controller: 'App\Controller\FormulaireController::aurevoir'
